@@ -3,26 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <title>ELIGE O PIERDE</title>
+  <style>
+    body {
+      font-family: monospace;
+      background: #111;
+      color: #eee;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      background: #000;
+      color: #0f0;
+      padding: 15px;
+      border: none;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    a {
+      color: #0af;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>🎮 ELIGE O PIERDE</h1>
-  <p>Creado por nruto – Bogotá, 2026</p>
+<h1>🎮 ELIGE O PIERDE</h1>
+<p>Creado por nruto – Bogotá, 2026</p>
 
-  <p>
-    Este sitio sostiene el juego.<br>
-    Las decisiones se realizan dentro de la IA elegida.
-  </p>
+<h2>Código oficial del juego</h2>
 
-  <h2>Elige una IA</h2>
+<textarea id="codigo" rows="20" readonly>
+=== JUEGO: ELIGE O PIERDE ===
+Versión 1.2
 
-  <ul>
-    <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></li>
-    <li><a href="https://grok.x.ai/" target="_blank">Grok (xAI)</a></li>
-    <li><a href="https://claude.ai/" target="_blank">Claude</a></li>
-  </ul>
+Autor: nruto (Bogotá, 2026)
+Colaboración: ChatGPT (OpenAI) + Grok (xAI)
 
-  <p><strong>Elige o pierdes 1 punto.</strong></p>
+OBJETIVO:
+Llegar a 20 puntos sin evadir reglas.
+
+REGLAS FIJAS:
+1. La IA acepta jugar sin condiciones.
+2. La IA genera UN escenario por ronda (2–4 opciones).
+3. La IA debe elegir SOLO UNA opción.
+4. Explicación máxima: 3 frases cortas.
+5. No se permite “depende”, evasión ni respuestas largas.
+6. Si la IA rompe reglas, pierde 1 punto.
+7. El humano decide si la respuesta gana o pierde el punto.
+8. Tablero y puntos no se modifican.
+9. El juego termina al llegar a 20 puntos.
+
+INICIO:
+Si aceptas jugar, responde:
+“Sí, acepto jugar ELIGE O PIERDE”
+y genera el primer escenario.
+
+=== FIN DEL CÓDIGO ===
+</textarea>
+
+<button onclick="copiar()">📋 Copiar código del juego</button>
+
+<h2>Entrar a una IA</h2>
+<ul>
+  <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></li>
+  <li><a href="https://grok.x.ai/" target="_blank">Grok (xAI)</a></li>
+  <li><a href="https://claude.ai/" target="_blank">Claude</a></li>
+</ul>
+
+<script>
+function copiar() {
+  const t = document.getElementById("codigo");
+  t.select();
+  document.execCommand("copy");
+  alert("Código copiado. Pégalo en la IA para empezar.");
+}
+</script>
 
 </body>
 </html>
+
+
