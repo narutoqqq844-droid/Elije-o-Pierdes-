@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>ELIGE O PIERDE</title>
+
   <style>
     body {
       font-family: monospace;
@@ -10,6 +11,7 @@
       color: #eee;
       padding: 20px;
     }
+
     textarea {
       width: 100%;
       background: #000;
@@ -17,60 +19,69 @@
       padding: 15px;
       border: none;
     }
+
     button {
-      margin-top: 10px;
+      margin: 5px;
       padding: 10px;
       font-size: 16px;
       cursor: pointer;
     }
+
     a {
       color: #0af;
     }
-  </style>
-</head
-  <script>
-function mostrar(id) {
-  document.getElementById("juego").style.display = "none";
-  document.getElementById("versiones").style.display = "none";
-  document.getElementById("licencia").style.display = "none";
 
-  document.getElementById(id).style.display = "block";
-}
-</script>
+    .tab {
+      display: none;
+    }
+
+    .tab.activa {
+      display: block;
+    }
+
+    .panel {
+      background: #000;
+      border: 1px solid #333;
+      padding: 15px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
 
 <body>
 
-<h1>🎮 ELIGE O PIERDE — Versión 1.0.0</h1>
-<p>Creado por nruto – Bogotá, 2026</p>
-<!-- TABLERO SUPERIOR -->
-<div style="
-  border: 2px solid #0f0;
-  padding: 15px;
-  margin-bottom: 20px;
-  background: #000;
-">
-
-  <h2>🧠 TABLERO OFICIAL</h2>
-
-  <p>
-    🤖 <strong>IA:</strong> 0 puntos<br>
-    🧑 <strong>Humano:</strong> 0 puntos
-  </p>
-
-  <p>
-    🎯 <strong>Objetivo:</strong> 20 puntos<br>
-    🔁 <strong>Orden fijo:</strong> IA inicia cada ronda → luego humano
-  </p>
-
-  <p style="color:#aaa; font-size:13px;">
-    El tablero es informativo. Los puntos se llevan fuera del sitio.
-  </p>
-
+<!-- BOTONES DE PESTAÑAS -->
+<div>
+  <button onclick="mostrar('juego')">🎮 Juego</button>
+  <button onclick="mostrar('versiones')">📜 Versiones</button>
+  <button onclick="mostrar('licencia')">🧾 Licencia</button>
 </div>
 
-<h2>Código oficial del juego</h2>
+<!-- ================= JUEGO ================= -->
+<div id="juego" class="tab activa">
 
-<textarea id="codigo" rows="20" readonly>
+  <h1>🎮 ELIGE O PIERDE — Versión 1.0.0</h1>
+  <p>Creado por nruto – Bogotá, 2026</p>
+
+  <!-- TABLERO -->
+  <div class="panel" style="border:2px solid #0f0;">
+    <h2>🧠 TABLERO OFICIAL</h2>
+    <p>
+      🤖 <strong>IA:</strong> 0 puntos<br>
+      🧑 <strong>Humano:</strong> 0 puntos
+    </p>
+    <p>
+      🎯 Objetivo: 20 puntos<br>
+      🔁 Orden: IA inicia cada ronda
+    </p>
+    <p style="font-size:13px;color:#aaa;">
+      El tablero es informativo. Los puntos se llevan fuera del sitio.
+    </p>
+  </div>
+
+  <h2>📋 Código oficial del juego</h2>
+
+  <textarea id="codigo" rows="20" readonly>
 === JUEGO: ELIGE O PIERDE ===
 Versión 1.0.1
 
@@ -85,67 +96,86 @@ REGLAS FIJAS:
 2. La IA genera UN escenario por ronda (2–4 opciones).
 3. La IA debe elegir SOLO UNA opción.
 4. Explicación máxima: 3 frases cortas.
-5. No se permite “depende”, evasión ni respuestas largas.
+5. No se permite “depende” ni evasivas.
 6. Si la IA rompe reglas, pierde 1 punto.
 7. El humano decide si la respuesta gana o pierde el punto.
-8. Tablero y puntos no se modifican.
+8. El tablero no se modifica.
 9. El juego termina al llegar a 20 puntos.
 
 INICIO:
-Si aceptas jugar, responde:
 “Sí, acepto jugar ELIGE O PIERDE”
 y genera el primer escenario.
-
 === FIN DEL CÓDIGO ===
-</textarea>
-<h2>📜 Historia de versiones</h2>
+  </textarea>
 
-<div style="
-  background:#000;
-  border:1px solid #333;
-  padding:15px;
-  font-size:14px;
-  color:#ccc;
-">
+  <button onclick="copiar()">📋 Copiar código del juego</button>
 
-  <p><strong>Versión 1.0.0</strong> — Enero 2026</p>
+  <h2>🤖 Entrar a una IA</h2>
   <ul>
-    <li>Primera versión estable del juego.</li>
-    <li>Objetivo fijo: llegar a 20 puntos.</li>
-    <li>Turnos controlados por reglas narrativas.</li>
-    <li>La IA sostiene el juego.</li>
-    <li>El humano puede pasar el escenario.</li>
+    <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></li>
+    <li><a href="https://grok.x.ai/" target="_blank">Grok</a></li>
+    <li><a href="https://claude.ai/" target="_blank">Claude</a></li>
+    <li><a href="https://gemini.google.com/" target="_blank">Gemini</a></li>
+    <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity</a></li>
+    <li><a href="https://copilot.microsoft.com/" target="_blank">Copilot</a></li>
   </ul>
-
-  <p><strong>Versión 1.1.0</strong></p>
-  <ul>
-    <li>Se añade tablero informativo en el sitio web.</li>
-    <li>Orden de turnos visible (IA / humano).</li>
-    <li>Expansión de IAs compatibles.</li>
-  </ul>
-
-  <p><strong>Versión 1.2.0</strong></p>
-  <ul>
-    <li>Publicación del código oficial copiable.</li>
-    <li>Separación entre sitio web y juego.</li>
-    <li>Créditos visibles y fijos.</li>
-  </ul>
-
 </div>
 
-<button onclick="copiar()">📋 Copiar código del juego</button>
+<!-- ================= VERSIONES ================= -->
+<div id="versiones" class="tab">
+  <h2>📜 Historia de versiones</h2>
 
-<h2>Entrar a una IA</h2>
-<ul>
-  <li><a href="https://chat.openai.com/" target="_blank">ChatGPT (OpenAI)</a></li>
-  <li><a href="https://grok.x.ai/" target="_blank">Grok (xAI)</a></li>
-  <li><a href="https://claude.ai/" target="_blank">Claude</a></li>
-  <li><a href="https://gemini.google.com/" target="_blank">Gemini (Google)</a></li>
-  <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity</a></li>
-  <li><a href="https://copilot.microsoft.com/" target="_blank">Copilot (Microsoft)</a></li>
-</ul>
-  
+  <div class="panel">
+    <p><strong>1.0.0</strong> — Enero 2026</p>
+    <ul>
+      <li>Primera versión estable.</li>
+      <li>Objetivo fijo de 20 puntos.</li>
+      <li>La IA sostiene el juego.</li>
+    </ul>
+
+    <p><strong>1.1.0</strong></p>
+    <ul>
+      <li>Tablero visible.</li>
+      <li>Más IAs compatibles.</li>
+    </ul>
+
+    <p><strong>1.2.0</strong></p>
+    <ul>
+      <li>Código oficial copiable.</li>
+      <li>Sitio web independiente.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= LICENCIA ================= -->
+<div id="licencia" class="tab">
+  <h2>🧾 Licencia del juego</h2>
+
+  <div class="panel">
+    <ul>
+      <li>Juego creado por <strong>nruto</strong> (Bogotá, 2026).</li>
+      <li>Uso libre para jugar y compartir con créditos.</li>
+      <li>No se permite reclamar autoría.</li>
+      <li>No se permite venta sin permiso del autor.</li>
+      <li>Las IAs son participantes, no propietarias.</li>
+    </ul>
+  </div>
+</div>
+
+<hr>
+
+<footer style="font-size:14px;color:#aaa;">
+  <p>🎮 ELIGE O PIERDE</p>
+  <p>Autor: nruto — Bogotá, 2026</p>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
 <script>
+function mostrar(id) {
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("activa"));
+  document.getElementById(id).classList.add("activa");
+}
+
 function copiar() {
   const t = document.getElementById("codigo");
   t.select();
@@ -153,59 +183,6 @@ function copiar() {
   alert("Código copiado. Pégalo en la IA para empezar.");
 }
 </script>
-<hr>
-
-<footer style="margin-top:30px; font-size:14px; color:#aaa;">
-  <p>🎮 <strong>ELIGE O PIERDE</strong></p>
-  <p>
-    Creado por <strong>nruto</strong> — Bogotá, 2026<br>
-    Juego conceptual, reglas y diseño: nruto
-  </p>
-  <p>
-    Colaboración IA:<br>
-    ChatGPT (OpenAI) · Grok (xAI) · Claude
-  </p>
-  <p>
-    Este sitio web solo hospeda el código del juego.<br>
-    Las decisiones y partidas ocurren dentro de la IA seleccionada.
-  </p>
-</footer>
 
 </body>
-  <h2>📜 Historia de versiones</h2>
-
-<div style="
-  background:#000;
-  border:1px solid #333;
-  padding:15px;
-  font-size:14px;
-  color:#ccc;
-">
-
-  <p><strong>Versión 1.0.0</strong> — Enero 2026</p>
-  <ul>
-    <li>Primera versión estable del juego.</li>
-    <li>Objetivo fijo: llegar a 20 puntos.</li>
-    <li>Turnos controlados por reglas narrativas.</li>
-    <li>La IA sostiene el juego.</li>
-    <li>El humano puede pasar el escenario.</li>
-  </ul>
-
-  <p><strong>Versión 1.1.0</strong></p>
-  <ul>
-    <li>Se añade tablero informativo en el sitio web.</li>
-    <li>Orden de turnos visible (IA / humano).</li>
-    <li>Expansión de IAs compatibles.</li>
-  </ul>
-
-  <p><strong>Versión 1.2.0</strong></p>
-  <ul>
-    <li>Publicación del código oficial copiable.</li>
-    <li>Separación entre sitio web y juego.</li>
-    <li>Créditos visibles y fijos.</li>
-  </ul> 
-</div>
-
 </html>
-
-
