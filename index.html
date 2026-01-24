@@ -59,16 +59,6 @@
   </p>
 </div>
 
-<!-- BOTÓN DE DONACIÓN -->
-<div class="donacion">
-  <form action="https://www.paypal.com/donate" method="post" target="_blank">
-    <input type="hidden" name="hosted_button_id" value="TU_CODIGO_DE_BOTON">
-    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" 
-           border="0" name="submit" title="Donar con PayPal" alt="PayPal - La forma segura y fácil de pagar en línea">
-    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-  </form>
-</div>
-
 <!-- CÓDIGO DEL JUEGO -->
 <h2>Código oficial del juego</h2>
 <textarea id="codigo" rows="20" readonly>
@@ -145,6 +135,21 @@ y genera el primer escenario.
   <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity</a></li>
   <li><a href="https://copilot.microsoft.com/" target="_blank">Copilot (Microsoft)</a></li>
 </ul>
+
+<!-- BOTÓN DE DONACIÓN ANTES DE CRÉDITOS -->
+<div class="donacion">
+  <form action= <div id="paypal-container-58DQUKEN92QVN"></div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "58DQUKEN92QVN",
+  }).render("#paypal-container-58DQUKEN92QVN")
+</script>method="post" target="_blank">
+    <input type="hidden" name="hosted_button_id" value="TU_CODIGO_DE_BOTON">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" 
+           border="0" name="submit" title="Donar con PayPal" alt="PayPal - La forma segura y fácil de pagar en línea">
+    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+  </form>
+</div>
 
 <script>
 function copiar() {
