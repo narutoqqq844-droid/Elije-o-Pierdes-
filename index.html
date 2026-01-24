@@ -52,10 +52,6 @@
       padding: 15px;
       background: #000;
     }
-    .donacion {
-      text-align: center;
-      margin: 20px 0;
-    }
   </style>
 </head>
 <body>
@@ -121,15 +117,13 @@ y genera el primer escenario.
   <button onclick="copiar()">📋 Copiar código del juego</button>
 
   <!-- BOTÓN DE DONACIÓN PAYPAL -->
-  <div class="donacion">
-    <div id="paypal-container-33EAANJKMPW82"></div>
-    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID"></script>
-    <script>
-      paypal.HostedButtons({
-        hostedButtonId: "33EAANJKMPW82",
-      }).render("#paypal-container-33EAANJKMPW82")
-    </script>
-  </div>
+  <div id="paypal-container-33EAANJKMPW82" style="margin:20px 0;"></div>
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "33EAANJKMPW82"
+    }).render("#paypal-container-33EAANJKMPW82");
+  </script>
 
   <!-- ENTRAR A IAs -->
   <h2>Entrar a una IA</h2>
@@ -172,16 +166,16 @@ y genera el primer escenario.
 
     <p><strong>Versión 1.2.1</strong></p>
     <ul>
-      <li>Se añadió botón de donación PayPal.</li>
+      <li>Se añade botón de donación PayPal debajo del tablero.</li>
       <li>Corrección de versión en título y código del juego.</li>
       <li>Pestañas para organizar contenido (Juego | Versiones | Licencia)</li>
     </ul>
 
     <p><strong>Versión 1.10.1</strong></p>
     <ul>
-      <li>Actualización a la versión 1.10.1.</li>
-      <li>Botón de PayPal integrado con código real.</li>
-      <li>Organización de pestañas mantenida.</li>
+      <li>Actualización del botón de PayPal con HostedButtons.</li>
+      <li>Versión actualizada en título y código del juego.</li>
+      <li>Mantenimiento de pestañas y organización completa del sitio.</li>
     </ul>
   </div>
 </div>
