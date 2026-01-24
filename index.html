@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>ELIGE O PIERDE</title>
+  <title>ELIGE O PIERDE — Versión 1.2.1</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -28,38 +28,71 @@
       color: #0af;
       text-decoration: none;
     }
-    hr {
-      margin: 30px 0;
-      border: 1px solid #333;
+    .tabs {
+      margin-bottom: 20px;
     }
+    .tabs button {
+      background:#222;
+      color:#eee;
+      border:1px solid #0f0;
+      margin-right:5px;
+    }
+    .tab-content {
+      display:none;
+    }
+    .active {
+      display:block;
+    }
+    hr { margin:30px 0; border:1px solid #333; }
   </style>
+  <script>
+    function mostrar(id) {
+      const tabs = document.getElementsByClassName('tab-content');
+      for (let t of tabs) t.style.display = 'none';
+      document.getElementById(id).style.display = 'block';
+    }
+    function copiar() {
+      const t = document.getElementById("codigo");
+      t.select();
+      document.execCommand("copy");
+      alert("Código copiado. Pégalo en la IA para jugar.");
+    }
+    window.onload = () => { mostrar('juego'); }
+  </script>
 </head>
-
 <body>
 
 <h1>🎮 ELIGE O PIERDE — Versión 1.2.1</h1>
-<p>Creado por <strong>nruto</strong> — Bogotá, 2026</p>
+<p>Creado por <strong>nruto</strong> – Bogotá, 2026</p>
 
-<!-- TABLERO -->
-<div style="border:2px solid #0f0; padding:15px; background:#000; margin-bottom:20px;">
-  <h2>🧠 TABLERO OFICIAL</h2>
-  <p>
-    🤖 <strong>IA:</strong> 0 puntos<br>
-    🧑 <strong>Humano:</strong> 0 puntos
-  </p>
-  <p>
-    🎯 Objetivo: 20 puntos<br>
-    🔁 Turno fijo: IA primero → luego humano
-  </p>
-  <p style="font-size:13px; color:#aaa;">
-    El tablero es informativo. El conteo real ocurre fuera del sitio.
-  </p>
+<!-- PESTAÑAS -->
+<div class="tabs">
+  <button onclick="mostrar('juego')">Juego</button>
+  <button onclick="mostrar('versiones')">Versiones</button>
+  <button onclick="mostrar('licencia')">Licencia</button>
 </div>
 
-<!-- CODIGO DEL JUEGO -->
-<h2>📜 Código oficial del juego</h2>
+<!-- TAB: JUEGO -->
+<div id="juego" class="tab-content">
+  <!-- TABLERO -->
+  <div style="border:2px solid #0f0; padding:15px; background:#000; margin-bottom:20px;">
+    <h2>🧠 TABLERO OFICIAL</h2>
+    <p>
+      🤖 <strong>IA:</strong> 0 puntos<br>
+      🧑 <strong>Humano:</strong> 0 puntos
+    </p>
+    <p>
+      🎯 Objetivo: 20 puntos<br>
+      🔁 Turno fijo: IA primero → luego humano
+    </p>
+    <p style="font-size:13px; color:#aaa;">
+      El tablero es informativo. El conteo real ocurre fuera del sitio.
+    </p>
+  </div>
 
-<textarea id="codigo" rows="20" readonly>
+  <!-- CODIGO DEL JUEGO -->
+  <h2>📜 Código oficial del juego</h2>
+  <textarea id="codigo" rows="20" readonly>
 === JUEGO: ELIGE O PIERDE ===
 Versión 1.2.1
 
@@ -84,50 +117,82 @@ INICIO:
 “Sí, acepto jugar ELIGE O PIERDE”
 y genera el primer escenario.
 === FIN ===
-</textarea>
+  </textarea>
+  <button onclick="copiar()">📋 Copiar código</button>
 
-<button onclick="copiar()">📋 Copiar código</button>
+  <!-- DONDE SE JUEGA -->
+  <h2>🤖 IAs donde se juega</h2>
+  <p style="color:#ccc;">
+    Este sitio <strong>NO ejecuta el juego</strong>.<br>
+    El juego se juega <strong>dentro de estas IAs</strong>, pegando el código.
+  </p>
+  <ul>
+    <li><a href="https://chat.openai.com/" target="_blank">ChatGPT (OpenAI)</a></li>
+    <li><a href="https://grok.x.ai/" target="_blank">Grok (xAI)</a></li>
+    <li><a href="https://claude.ai/" target="_blank">Claude (Anthropic)</a></li>
+    <li><a href="https://gemini.google.com/" target="_blank">Gemini (Google)</a></li>
+    <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity AI</a></li>
+    <li><a href="https://copilot.microsoft.com/" target="_blank">Copilot (Microsoft)</a></li>
+  </ul>
+</div>
 
-<!-- DONDE SE JUEGA -->
-<h2>🤖 IAs donde se juega ELIGE O PIERDE</h2>
-<p style="color:#ccc;">
-Este sitio <strong>NO ejecuta el juego</strong>.<br>
-El juego se juega <strong>dentro de estas IAs</strong>, pegando el código:
-</p>
+<!-- TAB: VERSIONES -->
+<div id="versiones" class="tab-content">
+  <h2>📜 Historia de versiones</h2>
+  <div style="background:#000; border:1px solid #333; padding:15px; font-size:14px; color:#ccc;">
+    <p><strong>Versión 1.0.0</strong> — Enero 2026</p>
+    <ul>
+      <li>Primera versión estable del juego.</li>
+      <li>Objetivo fijo: llegar a 20 puntos.</li>
+      <li>Turnos controlados por reglas narrativas.</li>
+      <li>La IA sostiene el juego.</li>
+      <li>El humano puede pasar el escenario.</li>
+    </ul>
+    <p><strong>Versión 1.1.0</strong></p>
+    <ul>
+      <li>Se añade tablero informativo en el sitio web.</li>
+      <li>Orden de turnos visible (IA / humano).</li>
+      <li>Expansión de IAs compatibles.</li>
+    </ul>
+    <p><strong>Versión 1.2.0</strong></p>
+    <ul>
+      <li>Publicación del código oficial copiable.</li>
+      <li>Separación entre sitio web y juego.</li>
+      <li>Créditos visibles y fijos.</li>
+    </ul>
+    <p><strong>Versión 1.2.1</strong></p>
+    <ul>
+      <li>Más IAs agregadas.</li>
+      <li>Créditos claros a ChatGPT, Grok, Claude, Gemini.</li>
+      <li>Sitio estable y limpio, con pestañas.</li>
+    </ul>
+  </div>
+</div>
 
-<ul>
-  <li><a href="https://chat.openai.com/" target="_blank">ChatGPT (OpenAI)</a></li>
-  <li><a href="https://grok.x.ai/" target="_blank">Grok (xAI)</a></li>
-  <li><a href="https://claude.ai/" target="_blank">Claude (Anthropic)</a></li>
-  <li><a href="https://gemini.google.com/" target="_blank">Gemini (Google)</a></li>
-  <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity AI</a></li>
-  <li><a href="https://copilot.microsoft.com/" target="_blank">Copilot (Microsoft)</a></li>
-</ul>
+<!-- TAB: LICENCIA -->
+<div id="licencia" class="tab-content">
+  <h2>🧾 Licencia del juego</h2>
+  <div style="background:#000; border:1px solid #333; padding:15px; font-size:14px; color:#ccc;">
+    <p><strong>ELIGE O PIERDE — Licencia MIT</strong></p>
+    <p>© 2026 nruto</p>
+    <p>Se permite copiar, modificar y distribuir el código para uso personal o educativo.  
+    No se permite uso comercial sin autorización del autor.</p>
+  </div>
+</div>
 
 <hr>
 
-<!-- CREDITOS -->
 <footer style="font-size:14px; color:#aaa;">
   <p><strong>Créditos</strong></p>
   <p>
     🎮 Juego y reglas: <strong>nruto</strong><br>
-    🤝 Colaboración creativa IA:<br>
-    ChatGPT (OpenAI) · Grok (xAI) · Claude · Gemini
+    🤝 Colaboración IA: ChatGPT · Grok · Claude · Gemini
   </p>
   <p>
     Este sitio solo hospeda el código.<br>
-    Las partidas ocurren dentro de cada IA.
+    Las partidas ocurren dentro de las IAs listadas.
   </p>
 </footer>
-
-<script>
-function copiar() {
-  const t = document.getElementById("codigo");
-  t.select();
-  document.execCommand("copy");
-  alert("Código copiado. Pégalo en la IA para jugar.");
-}
-</script>
 
 </body>
 </html>
