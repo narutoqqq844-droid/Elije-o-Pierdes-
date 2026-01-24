@@ -27,7 +27,17 @@
       color: #0af;
     }
   </style>
-</head>
+</head
+  <script>
+function mostrar(id) {
+  document.getElementById("juego").style.display = "none";
+  document.getElementById("versiones").style.display = "none";
+  document.getElementById("licencia").style.display = "none";
+
+  document.getElementById(id).style.display = "block";
+}
+</script>
+
 <body>
 
 <h1>🎮 ELIGE O PIERDE — Versión 1.0.0</h1>
