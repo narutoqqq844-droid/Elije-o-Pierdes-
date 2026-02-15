@@ -1,229 +1,52 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+  <title>ELIGE O PIERDE — Versión 1.10.1</title>
   <title>ELIGE O PIERDE — Versión 1.10.2</title>
-
-  <style>
-    body {
-      font-family: monospace;
-      background: #111;
-      color: #eee;
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-      color: #0f0;
-      text-shadow: 0 0 10px #0f0;
-    }
-
-    textarea {
-      width: 100%;
-      background: #000;
-      color: #0f0;
-      padding: 15px;
-      border: 1px solid #0f0;
-      border-radius: 6px;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 10px 15px;
-      font-size: 16px;
-      cursor: pointer;
-      background: #111;
-      color: #0f0;
-      border: 1px solid #0f0;
-      border-radius: 6px;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      background: #0f0;
-      color: #000;
-      transform: scale(1.05);
-    }
-
-    a {
-      color: #0af;
-    }
-
-    .tablero {
-      border: 2px solid #0f0;
-      padding: 15px;
-      margin-bottom: 20px;
-      background: #000;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0,255,0,0.2);
-    }
-
-    .tabs {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .tabs button {
-      padding: 10px 20px;
-      margin-right: 5px;
-      background: #222;
-      color: #0f0;
-      border: 1px solid #0f0;
-      border-radius: 5px;
-    }
-
-    .tabs button.active {
-      background: #0f0;
-      color: #000;
-    }
-
-    .tabcontent {
-      display: none;
-      border: 2px solid #0f0;
-      padding: 15px;
-      background: #000;
-      border-radius: 8px;
-    }
-
-    /* BARRA DE ACCESO RÁPIDO */
-    .barra-rapida {
-      position: sticky;
-      top: 0;
-      background: #000;
-      padding: 10px;
-      border-bottom: 2px solid #0f0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      z-index: 1000;
-      margin-bottom: 20px;
-    }
-
-    .barra-rapida a {
-      color: #0f0;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .barra-rapida a:hover {
-      color: #fff;
-      text-shadow: 0 0 8px #0f0;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #aaa;
-      text-align: center;
-    }
-  </style>
+<style>
+body {
+font-family: monospace;
+@@ -56,7 +56,7 @@
 </head>
-
 <body>
 
-<!-- BARRA DE ACCESO RÁPIDO -->
-<div class="barra-rapida">
-  <a href="#Juego">🎮 Juego</a>
-  <a href="#Versiones">📜 Versiones</a>
-  <a href="#Licencia">📄 Licencia</a>
-  <a href="#paypal-container-33EAANJKMPW82">💰 Donar</a>
-</div>
-
+<h1>🎮 ELIGE O PIERDE — Versión 1.10.1</h1>
 <h1>🎮 ELIGE O PIERDE — Versión 1.10.2</h1>
-<p style="text-align:center;">Creado por nruto – Bogotá, 2026</p>
+<p>Creado por nruto – Bogotá, 2026</p>
 
 <!-- PESTAÑAS -->
-<div class="tabs">
-  <button class="tablink active" onclick="abrirTab(event, 'Juego')">Juego</button>
-  <button class="tablink" onclick="abrirTab(event, 'Versiones')">Versiones</button>
-  <button class="tablink" onclick="abrirTab(event, 'Licencia')">Licencia</button>
-</div>
-
-<!-- JUEGO -->
-<div id="Juego" class="tabcontent" style="display:block;">
-
-  <div class="tablero">
-    <h2>🧠 TABLERO OFICIAL</h2>
-    <p>
+@@ -72,8 +72,8 @@ <h1>🎮 ELIGE O PIERDE — Versión 1.10.1</h1>
+<div class="tablero">
+<h2>🧠 TABLERO OFICIAL</h2>
+<p>
+      🤖 <strong>IA:</strong> 0 puntos<br>
+      🧑 <strong>Humano:</strong> 0 puntos
       🤖 <strong>IA:</strong> 8 puntos<br>
       🧑 <strong>Humano:</strong> 5 puntos
-    </p>
-    <p>
-      🎯 <strong>Objetivo:</strong> 20 puntos<br>
-      🔁 <strong>Orden fijo:</strong> IA inicia cada ronda → luego humano
-    </p>
-    <p style="color:#aaa; font-size:13px;">
-      El tablero es informativo. Los puntos se llevan fuera del sitio.
-    </p>
-  </div>
-
-  <h2>Código oficial del juego</h2>
-  <textarea id="codigo" rows="20" readonly>
+</p>
+<p>
+🎯 <strong>Objetivo:</strong> 20 puntos<br>
+@@ -88,7 +88,7 @@ <h2>🧠 TABLERO OFICIAL</h2>
+<h2>Código oficial del juego</h2>
+<textarea id="codigo" rows="20" readonly>
 === JUEGO: ELIGE O PIERDE ===
+Versión 1.10.1
 Versión 1.10.2
+
 Autor: nruto (Bogotá, 2026)
 Colaboración: ChatGPT (OpenAI) + Grok (xAI)
-...
-=== FIN DEL CÓDIGO ===
-  </textarea>
-
-  <button onclick="copiar()">📋 Copiar código del juego</button>
-
-  <div id="paypal-container-33EAANJKMPW82" style="margin:20px 0;"></div>
-  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
-  <script>
-    paypal.HostedButtons({
-      hostedButtonId: "33EAANJKMPW82"
-    }).render("#paypal-container-33EAANJKMPW82");
-  </script>
-
+@@ -177,6 +177,13 @@ <h2>📜 Historia de versiones</h2>
+<li>Versión actualizada en título y código del juego.</li>
+<li>Mantenimiento de pestañas y organización completa del sitio.</li>
+</ul>
+    
+      <p><strong>Versión 1.10.2</strong></p>
+    <ul>
+      <li>Actualización del tablero y segudirar.</li>
+      <li>atualizacion del sitio o deposito https://elijeopierdes-oficial.netlify.app/.</li>
+      <li>proximamente nuevo colaboraciones.</li>
+    </ul>
+</div>
 </div>
 
-<!-- VERSIONES -->
-<div id="Versiones" class="tabcontent">
-  <h2>📜 Historia de versiones</h2>
-  <p>Contenido de versiones igual al tuyo.</p>
-</div>
-
-<!-- LICENCIA -->
-<div id="Licencia" class="tabcontent">
-  <h2>📄 Licencia del juego</h2>
-  <p>ELIGE O PIERDE — Versión 1.10.2</p>
-  <p>© 2026 nruto. Todos los derechos reservados.</p>
-</div>
-
-<script>
-function copiar() {
-  const texto = document.getElementById("codigo").value;
-  navigator.clipboard.writeText(texto)
-    .then(() => alert("Código copiado correctamente."));
-}
-
-function abrirTab(evt, tabName) {
-  const tabcontent = document.getElementsByClassName("tabcontent");
-  for (let i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  const tablinks = document.getElementsByClassName("tablink");
-  for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
-
-<footer>
-  <p>🎮 <strong>ELIGE O PIERDE</strong></p>
-  <p>Creado por <strong>nruto</strong> — Bogotá, 2026</p>
-  <p>Colaboración IA: ChatGPT · Grok · Claude</p>
-</footer>
-
-</body>
-</html>
+  
