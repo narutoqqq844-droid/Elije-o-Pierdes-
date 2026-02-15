@@ -2,138 +2,138 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <title>ELIGE O PIERDE — Versión 2.00.2</title>
+<meta charset="UTF-8">
+<title>ELIGE O PIERDE — Versión 2.00.2</title>
 
-  <style>
-    :root {
-      --primary: #714B67;
-      --bg: #f4f5f7;
-      --card: #ffffff;
-      --text: #333;
-      --border: #ddd;
-    }
+<style>
+:root{
+--primary:#714B67;
+--bg:#f4f5f7;
+--card:#ffffff;
+--text:#333;
+--border:#ddd;
+}
 
-    body.dark {
-      --bg: #111;
-      --card: #1e1e1e;
-      --text: #eee;
-      --border: #333;
-    }
+body.dark{
+--bg:#111;
+--card:#1e1e1e;
+--text:#eee;
+--border:#333;
+}
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: 0.3s;
-    }
+body{
+margin:0;
+font-family:"Segoe UI",Roboto,Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+transition:0.3s;
+}
 
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
+header{
+background:var(--primary);
+color:white;
+padding:20px;
+text-align:center;
+position:relative;
+}
 
-    .theme-toggle {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      background: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-    }
+.theme-toggle{
+position:absolute;
+right:20px;
+top:20px;
+background:white;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+font-size:14px;
+}
 
-    body.dark .theme-toggle {
-      background: #333;
-      color: white;
-    }
+body.dark .theme-toggle{
+background:#333;
+color:white;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
+.container{
+max-width:1100px;
+margin:30px auto;
+padding:0 20px;
+}
 
-    .card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      margin-bottom: 20px;
-    }
+.card{
+background:var(--card);
+border-radius:12px;
+padding:20px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+margin-bottom:20px;
+}
 
-    textarea {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      padding: 15px;
-      font-family: monospace;
-      background: var(--bg);
-      color: var(--text);
-    }
+textarea{
+width:100%;
+border-radius:8px;
+border:1px solid var(--border);
+padding:15px;
+font-family:monospace;
+background:var(--bg);
+color:var(--text);
+}
 
-    button.primary {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+button.primary{
+background:var(--primary);
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      color: var(--text);
-    }
+footer{
+text-align:center;
+padding:30px;
+font-size:14px;
+color:var(--text);
+}
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
+a{
+color:var(--primary);
+text-decoration:none;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+a:hover{
+text-decoration:underline;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>ELIGE O PIERDE — Versión 2.00.1</h1>
-    <p>Creado por nruto — Bogotá, 2026</p>
-    <button class="theme-toggle" onclick="toggleTheme()">🌙 Tema</button>
-  </header>
+<header>
+<h1>ELIGE O PIERDE — Versión 2.00.1</h1>
+<p>Creado por nruto — Bogotá, 2026</p>
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Tema</button>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <!-- JUEGO -->
-    <div id="Juego">
+<div id="Juego">
 
-      <div class="card">
-        <h2>🧠 TABLERO OFICIAL</h2>
-        <p>
-          🤖 <strong>IA:</strong> 8 puntos<br>
-          🧑 <strong>Humano:</strong> 5 puntos
-        </p>
-        <p>
-          🎯 <strong>Objetivo:</strong> 20 puntos<br>
-          🔁 <strong>Orden fijo:</strong> IA inicia cada ronda → luego humano
-        </p>
-      </div>
+<div class="card">
+<h2>🧠 TABLERO OFICIAL</h2>
+<p>
+🤖 <strong>IA:</strong> 8 puntos<br>
+🧑 <strong>Humano:</strong> 5 puntos
+</p>
+<p>
+🎯 <strong>Objetivo:</strong> 20 puntos<br>
+🔁 <strong>Orden fijo:</strong> IA inicia cada ronda → luego humano
+</p>
+</div>
 
-      <div class="card">
-        <h2>Código oficial del juego</h2>
-        <textarea id="codigo" rows="20" readonly>
+<div class="card">
+<h2>Código oficial del juego</h2>
+
+<textarea id="codigo" rows="20" readonly>
 === JUEGO: ELIGE O PIERDE ===
 Versión 2.00.2
 
@@ -158,36 +158,35 @@ INICIO:
 “Sí, acepto jugar ELIGE O PIERDE”
 
 === FIN DEL CÓDIGO ===
-        </textarea>
-        <button class="primary" onclick="copiar()">📋 Copiar código</button>
-      </div>
+</textarea>
 
-    </div>
+<button class="primary" onclick="copiar()">📋 Copiar código</button>
+</div>
 
-  </div>
+</div>
+</div>
 
-  <script>
-    function copiar() {
-      const t = document.getElementById("codigo");
-      t.select();
-      document.execCommand("copy");
-      alert("Código copiado.");
-    }
+<script>
+function copiar(){
+const t=document.getElementById("codigo");
+t.select();
+document.execCommand("copy");
+alert("Código copiado.");
+}
 
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
+function toggleTheme(){
+document.body.classList.toggle("dark");
+if(document.body.classList.contains("dark")){
+localStorage.setItem("theme","dark");
+}else{
+localStorage.setItem("theme","light");
+}
+}
 
-      if (document.body.classList.contains("dark")) {
-        localStorage.setItem("theme", "dark");
-      } else {
-        localStorage.setItem("theme", "light");
-      }
-    }
-
-    if (localStorage.getItem("theme") === "dark") {
-      document.body.classList.add("dark");
-    }
-  </script>
+if(localStorage.getItem("theme")==="dark"){
+document.body.classList.add("dark");
+}
+</script>
 
 </body>
 </html>
