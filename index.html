@@ -1,1 +1,91 @@
-hola
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ELIGE O PIERDE — Versión 1.10.2</title>
+  <style>
+    body {
+      font-family: monospace;
+@@ -56,7 +56,7 @@
+</head>
+<body>
+
+<h1>🎮 ELIGE O PIERDE — Versión 1.10.2</h1>
+<p>Creado por nruto – Bogotá, 2026</p>
+
+<!-- PESTAÑAS -->
+@@ -72,8 +72,8 @@
+  <div class="tablero">
+    <h2>🧠 TABLERO OFICIAL</h2>
+    <p>
+      🤖 <strong>IA:</strong> 0 puntos<br>
+      🧑 <strong>Humano:</strong> 0 puntos
+      🤖 <strong>IA:</strong> 8 puntos<br>
+      🧑 <strong>Humano:</strong> 5 puntos
+    </p>
+    <p>
+      🎯 <strong>Objetivo:</strong> 20 puntos<br>
+@@ -88,7 +88,7 @@
+  <h2>Código oficial del juego</h2>
+  <textarea id="codigo" rows="20" readonly>
+=== JUEGO: ELIGE O PIERDE ===
+Versión 1.10.1
+Versión 1.10.2
+
+Autor: nruto (Bogotá, 2026)
+Colaboración: ChatGPT (OpenAI) + Grok (xAI)
+@@ -177,48 +177,55 @@
+      <li>Versión actualizada en título y código del juego.</li>
+      <li>Mantenimiento de pestañas y organización completa del sitio.</li>
+    </ul>
+    
+      <p><strong>Versión 1.10.2</strong></p>
+    <ul>
+      <li>Actualización del tablero y segudirar.</li>
+      <li>atualizacion del sitio o deposito https://elijeopierdes-oficial.netlify.app/.</li>
+      <li>proximamente nuevo colaboraciones.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- LICENCIA -->
+<div id="Licencia" class="tabcontent">
+  <h2>📄 Licencia del juego</h2>
+  <p>ELIGE O PIERDE — Versión 1.10.1</p>
+  <p>© 2026 nruto. Todos los derechos reservados.</p>
+  <p>Este juego se distribuye con fines educativos y de entretenimiento.</p>
+  <p>No se permite redistribuir o vender sin permiso del autor.</p>
+</div>
+
+<script>
+function copiar() {
+  const t = document.getElementById("codigo");
+  t.select();
+  document.execCommand("copy");
+  alert("Código copiado. Pégalo en la IA para empezar.");
+}
+
+// Función para pestañas
+function abrirTab(evt, tabName) {
+  const tabcontent = document.getElementsByClassName("tabcontent");
+  for (let i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  const tablinks = document.getElementsByClassName("tablink");
+  for (let i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+<hr>
+<footer style="margin-top:30px; font-size:14px; color:#aaa;">
+  <p>🎮 <strong>ELIGE O PIERDE</strong></p>
+  <p>Creado por <strong>nruto</strong> — Bogotá, 2026<br>Juego conceptual, reglas y diseño: nruto</p>
+  <p>Colaboración IA:<br>ChatGPT (OpenAI) · Grok (xAI) · Claude</p>
+  <p>Este sitio web solo hospeda el código del juego.<br>Las decisiones y partidas ocurren dentro de la IA seleccionada.</p>
+</footer>
+
+</body>
+</html>
