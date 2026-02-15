@@ -3,29 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>ELIGE O PIERDE — Versión 2.00.2</title>
-   <style>
+<style>
+  :root {
+    --primary: #714B67;
+    --bg: #f4f5f7;
+    --card: #ffffff;
+    --text: #333;
+    --border: #ddd;
+  }
+
+  body.dark {
+    --bg: #111;
+    --card: #1e1e1e;
+    --text: #eee;
+    --border: #333;
+  }
+
   body {
     margin: 0;
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    background: #f4f5f7;
-    color: #333;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
   }
 
   header {
-    background: #714B67;
+    background: var(--primary);
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative;
   }
 
-  header h1 {
-    margin: 0;
-    font-size: 28px;
+  .theme-toggle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
   }
 
-  header p {
-    margin: 5px 0 0 0;
-    opacity: 0.8;
+  body.dark .theme-toggle {
+    background: #333;
+    color: white;
   }
 
   .container {
@@ -41,43 +65,39 @@
   }
 
   .tabs button {
-    background: white;
-    border: 1px solid #ddd;
+    background: var(--card);
+    border: 1px solid var(--border);
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s;
   }
 
   .tabs button.active {
-    background: #714B67;
+    background: var(--primary);
     color: white;
-    border-color: #714B67;
+    border-color: var(--primary);
   }
 
   .card {
-    background: white;
+    background: var(--card);
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     margin-bottom: 20px;
   }
 
-  .tabcontent {
-    display: none;
-  }
-
   textarea {
     width: 100%;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     padding: 15px;
     font-family: monospace;
-    background: #fafafa;
+    background: var(--bg);
+    color: var(--text);
   }
 
   button.primary {
-    background: #714B67;
+    background: var(--primary);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -86,19 +106,15 @@
     margin-top: 10px;
   }
 
-  button.primary:hover {
-    opacity: 0.9;
-  }
-
   footer {
     text-align: center;
     padding: 30px;
     font-size: 14px;
-    color: #666;
+    color: var(--text);
   }
 
   a {
-    color: #714B67;
+    color: var(--primary);
     text-decoration: none;
   }
 
@@ -112,10 +128,10 @@
 <header>
   <h1>ELIGE O PIERDE — Versión 2.00.1</h1>
   <p>Creado por nruto — Bogotá, 2026</p>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 Tema</button>
 </header>
 
 <div class="container">
-
 
 <!-- JUEGO -->
 <div id="Juego" class="tabcontent" style="display:block;">
@@ -292,15 +308,22 @@ function abrirTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-</script>
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("dark");
 
-<hr>
-<footer style="margin-top:30px; font-size:14px; color:#aaa;">
-  <p>🎮 <strong>ELIGE O PIERDE</strong></p>
-  <p>Creado por <strong>nruto</strong> — Bogotá, 2026<br>Juego conceptual, reglas y diseño: nruto</p>
-  <p>Colaboración IA:<br>ChatGPT (OpenAI) · Grok (xAI) · Claude</p>
-  <p>Este sitio web solo hospeda el código del juego.<br>Las decisiones y partidas ocurren dentro de la IA seleccionada.</p>
-</footer>
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+}
+
+// Guardar preferencia
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+</script>
 
 </body>
 </html>
