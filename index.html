@@ -1,237 +1,115 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elige o Pierdes 3.8</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #f5f5f5;
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-body{
-background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
-color:white;
-min-height:100vh;
-display:flex;
-flex-direction:column;
-align-items:center;
+h1 {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
-header{
-padding:40px 20px;
-text-align:center;
+p {
+  opacity: 0.7;
 }
 
-header h1{
-font-size:42px;
-font-weight:800;
-letter-spacing:1px;
+textarea {
+  width: 100%;
+  background: #111;
+  color: #00ff88;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #222;
+  font-size: 14px;
 }
 
-header p{
-opacity:0.6;
-margin-top:10px;
+button {
+  margin-top: 15px;
+  padding: 12px 22px;
+  font-size: 15px;
+  border-radius: 30px;
+  border: none;
+  background: #ffffff;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.tabs{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-justify-content:center;
-margin-bottom:30px;
+button:hover {
+  background: #e5e5e5;
+  transform: scale(1.05);
 }
 
-.tab-btn{
-padding:12px 20px;
-background:#1f1f1f;
-border:none;
-border-radius:30px;
-cursor:pointer;
-color:white;
-transition:0.3s;
+a {
+  color: #4ea1ff;
+  text-decoration: none;
 }
 
-.tab-btn:hover{
-background:#333;
-transform:scale(1.05);
+a:hover {
+  text-decoration: underline;
 }
 
-.tab-content{
-display:none;
-max-width:1000px;
-width:90%;
-margin-bottom:40px;
-animation:fade 0.3s ease-in-out;
+.tablero {
+  border: none;
+  padding: 25px;
+  margin-bottom: 30px;
+  background: #151515;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
-.active{
-display:block;
+.tabs {
+  margin-bottom: 30px;
 }
 
-.card{
-background:#1a1a1a;
-padding:30px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
-margin-bottom:20px;
+.tabs button {
+  padding: 12px 24px;
+  margin-right: 10px;
+  background: #1c1c1c;
+  color: #aaa;
+  border-radius: 30px;
+  border: 1px solid #333;
+  transition: 0.3s;
 }
 
-button{
-padding:12px 20px;
-border:none;
-border-radius:10px;
-background:#ffffff;
-color:black;
-font-weight:600;
-cursor:pointer;
-transition:0.3s;
+.tabs button.active {
+  background: #ffffff;
+  color: #000;
+  font-weight: 600;
 }
 
-button:hover{
-background:#d6d6d6;
-transform:scale(1.05);
+.tabs button:hover {
+  background: #2a2a2a;
+  color: #fff;
 }
 
-.score-board{
-display:flex;
-justify-content:space-around;
-margin-top:20px;
-font-size:20px;
+.tabcontent {
+  display: none;
+  padding: 25px;
+  background: #151515;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  animation: fade 0.3s ease-in-out;
 }
 
-footer{
-opacity:0.5;
-padding:20px;
-text-align:center;
-font-size:14px;
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fade{
-from{opacity:0;transform:translateY(10px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-@media(max-width:600px){
-header h1{font-size:28px;}
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
 }
 </style>
-</head>
-
-<body>
-
-<header>
-<h1>🔥 ELIGE O PIERDES 3.8</h1>
-<p>Versión Premium — Sistema Estable Mejorado</p>
-</header>
-
-<div class="tabs">
-<button class="tab-btn" onclick="openTab('inicio')">Inicio</button>
-<button class="tab-btn" onclick="openTab('juego')">Juego</button>
-<button class="tab-btn" onclick="openTab('historial')">Historial</button>
-<button class="tab-btn" onclick="openTab('licencia')">Licencia</button>
-<button class="tab-btn" onclick="openTab('donar')">Donar</button>
-</div>
-
-<!-- INICIO -->
-<div id="inicio" class="tab-content active">
-<div class="card">
-<h2>Bienvenido</h2>
-<p>Elige o Pierdes es un sistema de decisiones IA vs Humanos.</p>
-</div>
-</div>
-
-<!-- JUEGO -->
-<div id="juego" class="tab-content">
-<div class="card">
-<h2>Tablero de Puntos</h2>
-<div class="score-board">
-<div>🤖 IA: <span id="iaScore">0</span></div>
-<div>👤 Humanos: <span id="humanScore">0</span></div>
-</div>
-
-<br>
-
-<button onclick="sumarIA()">Punto IA</button>
-<button onclick="sumarHuman()">Punto Humanos</button>
-<button onclick="copiarResultado()">Copiar Resultado</button>
-
-</div>
-</div>
-
-<!-- HISTORIAL -->
-<div id="historial" class="tab-content">
-<div class="card">
-<h2>Historial</h2>
-<ul id="listaHistorial"></ul>
-</div>
-</div>
-
-<!-- LICENCIA -->
-<div id="licencia" class="tab-content">
-<div class="card">
-<h2>Licencia Oficial</h2>
-<p>© 2026 Elige o Pierdes. Todos los derechos reservados.</p>
-</div>
-</div>
-
-<!-- DONAR -->
-<div id="donar" class="tab-content">
-<div class="card">
-<h2>Apoya el Proyecto</h2>
-<p>Puedes donar para apoyar el desarrollo.</p>
-
-<!-- PEGA AQUÍ TU BOTÓN REAL DE PAYPAL -->
-<a href="#" target="_blank">
-<button>Donar con PayPal</button>
-</a>
-
-</div>
-</div>
-
-<footer>
-Versión 3.8 Premium — Diseño Mejorado
-</footer>
-
-<script>
-let ia=0;
-let human=0;
-
-function openTab(tab){
-document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
-document.getElementById(tab).classList.add("active");
-}
-
-function sumarIA(){
-ia++;
-document.getElementById("iaScore").innerText=ia;
-agregarHistorial("IA ganó un punto");
-}
-
-function sumarHuman(){
-human++;
-document.getElementById("humanScore").innerText=human;
-agregarHistorial("Humanos ganaron un punto");
-}
-
-function agregarHistorial(texto){
-let li=document.createElement("li");
-li.innerText=texto;
-document.getElementById("listaHistorial").appendChild(li);
-}
-
-function copiarResultado(){
-let texto=`IA: ${ia} | Humanos: ${human}`;
-navigator.clipboard.writeText(texto);
-alert("Resultado copiado");
-}
-</script>
-
-</body>
-</html>
