@@ -1,255 +1,252 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>ELIGE O PIERDE — Versión 2.00.2</title>
-  <style>
-    body {
-      font-family: monospace;
-      background: #111;
-      color: #eee;
-      padding: 20px;
-    }
-    textarea {
-      width: 100%;
-      background: #000;
-      color: #0f0;
-      padding: 15px;
-      border: none;
-    }
-    button {
-      margin-top: 10px;
-      padding: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    a {
-      color: #0af;
-    }
-    .tablero {
-      border: 2px solid #0f0;
-      padding: 15px;
-      margin-bottom: 20px;
-      background: #000;
-    }
-    .tabs {
-      margin-bottom: 20px;
-    }
-    .tabs button {
-      padding: 10px 20px;
-      margin-right: 5px;
-      background: #222;
-      color: #0f0;
-      border: 1px solid #0f0;
-    }
-    .tabs button.active {
-      background: #0f0;
-      color: #000;
-    }
-    .tabcontent {
-      display: none;
-      border: 2px solid #0f0;
-      padding: 15px;
-      background: #000;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELIGE O PIERDE — Versión 3.5</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#f5f5f7;
+  color:#111;
+}
+
+/* NAV */
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 10%;
+  background:#fff;
+  position:sticky;
+  top:0;
+  box-shadow:0 2px 20px rgba(0,0,0,0.05);
+  z-index:1000;
+}
+
+nav h1{
+  font-weight:800;
+}
+
+.tabs button{
+  background:none;
+  border:none;
+  margin-left:20px;
+  font-size:15px;
+  cursor:pointer;
+  font-weight:500;
+  color:#555;
+  transition:0.3s;
+}
+
+.tabs button:hover{
+  color:#000;
+}
+
+.tabs button.active{
+  color:#000;
+  font-weight:700;
+}
+
+/* SECCIONES */
+
+.tabcontent{
+  display:none;
+  padding:80px 12%;
+}
+
+.tabcontent.active{
+  display:block;
+}
+
+/* HERO */
+
+.hero{
+  text-align:center;
+  padding:120px 10%;
+}
+
+.hero h2{
+  font-size:3.5rem;
+  font-weight:800;
+}
+
+.hero p{
+  margin-top:20px;
+  color:#666;
+  font-size:1.2rem;
+}
+
+/* TABLERO */
+
+.tablero{
+  margin-top:40px;
+  padding:40px;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.tablero h3{
+  margin-bottom:20px;
+}
+
+.score{
+  font-size:2rem;
+  font-weight:800;
+}
+
+/* BOTONES */
+
+button{
+  padding:12px 30px;
+  border-radius:50px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn-dark{
+  background:#111;
+  color:#fff;
+}
+
+.btn-dark:hover{
+  background:#333;
+}
+
+/* TEXTAREA */
+
+textarea{
+  width:100%;
+  margin-top:20px;
+  padding:20px;
+  border-radius:15px;
+  border:1px solid #ddd;
+  font-family:monospace;
+}
+
+/* FOOTER */
+
+footer{
+  padding:60px;
+  text-align:center;
+  background:#fff;
+  color:#777;
+  margin-top:80px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>🎮 ELIGE O PIERDE — Versión 2.00.2</h1>
-<p>Creado por nruto – Bogotá, 2026</p>
-
-<!-- PESTAÑAS -->
-<div class="tabs">
-  <button class="tablink active" onclick="abrirTab(event, 'Juego')">Juego</button>
-  <button class="tablink" onclick="abrirTab(event, 'Versiones')">Versiones</button>
-  <button class="tablink" onclick="abrirTab(event, 'Licencia')">Licencia</button>
-</div>
+<nav>
+  <h1>ELIGE O PIERDE</h1>
+  <div class="tabs">
+    <button class="tablink active" onclick="abrirTab(event,'Juego')">Juego</button>
+    <button class="tablink" onclick="abrirTab(event,'Versiones')">Versiones</button>
+    <button class="tablink" onclick="abrirTab(event,'Licencia')">Licencia</button>
+  </div>
+</nav>
 
 <!-- JUEGO -->
-<div id="Juego" class="tabcontent" style="display:block;">
-  <!-- TABLERO SUPERIOR -->
-  <div class="tablero">
-    <h2>🧠 TABLERO OFICIAL</h2>
-    <p>
-      🤖 <strong>IA:</strong> 8 puntos<br>
-      🧑 <strong>Humano:</strong> 5 puntos
-    </p>
-    <p>
-      🎯 <strong>Objetivo:</strong> 20 puntos<br>
-      🔁 <strong>Orden fijo:</strong> IA inicia cada ronda → luego humano
-    </p>
-    <p style="color:#aaa; font-size:13px;">
-      El tablero es informativo. Los puntos se llevan fuera del sitio.
-    </p>
-  </div>
+<div id="Juego" class="tabcontent active">
 
-  <!-- CÓDIGO DEL JUEGO -->
-  <h2>Código oficial del juego</h2>
-  <textarea id="codigo" rows="20" readonly>
+<div class="hero">
+  <h2>Una decisión.<br>Sin evasión.</h2>
+  <p>El juego mental donde la IA no puede escapar.</p>
+</div>
+
+<div class="tablero">
+  <h3>🧠 Tablero Oficial</h3>
+  <p>🤖 IA: <span class="score">8</span></p>
+  <p>🧑 Humano: <span class="score">5</span></p>
+  <p>🎯 Objetivo: 20 puntos</p>
+</div>
+
+<h3 style="margin-top:60px;">Código Oficial</h3>
+
+<textarea id="codigo" rows="18" readonly>
 === JUEGO: ELIGE O PIERDE ===
-Versión 2.00.2
+Versión 3.5
 
-Autor: nruto (Bogotá, 2026)
-Colaboración: ChatGPT (OpenAI) + Grok (xAI)
-
-OBJETIVO:
 Llegar a 20 puntos sin evadir reglas.
+La IA genera un escenario.
+Debe elegir solo una opción.
+Máximo tres frases.
+Sin depender.
+El humano decide el punto.
+</textarea>
 
-REGLAS FIJAS:
-1. La IA acepta jugar sin condiciones.
-2. La IA genera UN escenario por ronda (2–4 opciones).
-3. La IA debe elegir SOLO UNA opción.
-4. Explicación máxima: 3 frases cortas.
-5. No se permite “depende”, evasión ni respuestas largas.
-6. Si la IA rompe reglas, pierde 1 punto.
-7. El humano decide si la respuesta gana o pierde el punto.
-8. Tablero y puntos no se modifican.
-9. El juego termina al llegar a 20 puntos.
+<button class="btn-dark" onclick="copiar()">Copiar código</button>
 
-INICIO:
-Si aceptas jugar, responde:
-“Sí, acepto jugar ELIGE O PIERDE”
-y genera el primer escenario.
-
-=== FIN DEL CÓDIGO ===
-  </textarea>
-  <button onclick="copiar()">📋 Copiar código del juego</button>
-
-  <!-- BOTÓN DE DONACIÓN PAYPAL -->
-  <div id="paypal-container-33EAANJKMPW82" style="margin:20px 0;"></div>
-  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
-  <script>
-    paypal.HostedButtons({
-      hostedButtonId: "33EAANJKMPW82"
-    }).render("#paypal-container-33EAANJKMPW82");
-  </script>
-
-  <!-- ENTRAR A IAs -->
-  <h2>Entrar a una IA</h2>
+<div style="margin-top:50px;">
+  <h3>Entrar a una IA</h3>
   <ul>
-    <li><a href="https://www.popai.pro/" target="_blank">PopAI</a></li>
-    <li><a href="https://chat.openai.com/" target="_blank">ChatGPT (OpenAI)</a></li>
-    <li><a href="https://grok.x.ai/" target="_blank">Grok (xAI)</a></li>
+    <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></li>
+    <li><a href="https://grok.x.ai/" target="_blank">Grok</a></li>
     <li><a href="https://claude.ai/" target="_blank">Claude</a></li>
-    <li><a href="https://gemini.google.com/" target="_blank">Gemini (Google)</a></li>
-    <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity</a></li>
-    <li><a href="https://copilot.microsoft.com/" target="_blank">Copilot (Microsoft)</a></li>
+    <li><a href="https://gemini.google.com/" target="_blank">Gemini</a></li>
   </ul>
 </div>
 
-<!-- VERSIONES --> oficiales
-<div id="Versiones" class="tabcontent">
-  <h2>📜 Historia de versiones</h2>
-
-  <div style="background:#000; border:1px solid #333; padding:15px; font-size:14px; color:#ccc;">
-
-    <p><strong>Versión 1.0.0</strong> — Enero 2026</p>
-    <ul>
-      <li>Primera versión estable del juego.</li>
-      <li>Objetivo fijo: llegar a 20 puntos.</li>
-      <li>Turnos narrativos controlados por reglas.</li>
-      <li>La IA sostiene la estructura del juego.</li>
-    </ul>
-
-    <p><strong>Versión 1.1.0</strong></p>
-    <ul>
-      <li>Se añade tablero informativo en el sitio web.</li>
-      <li>Orden de turnos visible (IA / humano).</li>
-      <li>Expansión de IAs compatibles.</li>
-    </ul>
-
-    <p><strong>Versión 1.2.0</strong></p>
-    <ul>
-      <li>Publicación del código oficial copiable.</li>
-      <li>Separación clara entre sitio web y juego.</li>
-      <li>Créditos visibles y permanentes.</li>
-    </ul>
-
-    <p><strong>Versión 1.2.1</strong></p>
-    <ul>
-      <li>Se añade botón de donación PayPal debajo del tablero.</li>
-      <li>Pestañas para organizar contenido (Juego | Versiones | Licencia).</li>
-      <li>Correcciones menores de estructura.</li>
-    </ul>
-
-    <p><strong>Versión 1.10.1</strong></p>
-    <ul>
-      <li>Actualización del sistema PayPal con HostedButtons.</li>
-      <li>Mejoras visuales menores.</li>
-      <li>Mantenimiento general del código.</li>
-    </ul>
-
-    <p><strong>Versión 1.10.2</strong></p>
-    <ul>
-      <li>Corrección de enlaces externos.</li>
-      <li>Optimización del sistema copiar().</li>
-      <li>Unificación de versión en título y licencia.</li>
-    </ul>
-
-    <hr style="border:1px solid #222; margin:25px 0;">
-
-    <p style="color:#0f0; font-size:16px;">
-      <strong>🚀 Versión 2.00.1 — Oficial</strong> — Febrero 2026
-    </p>
-    <ul>
-      <li>Salto oficial a rama mayor 2.x del proyecto.</li>
-      <li>Sistema completo de pestañas estable y funcional.</li>
-      <li>Tablero visual permanente integrado.</li>
-      <li>Botón de donación PayPal funcional dentro del sistema.</li>
-      <li>Corrección estructural completa del HTML.</li>
-      <li>Optimización del sistema de copia moderna.</li>
-      <li>Historial organizado para futuras versiones.</li>
-      <li>Base sólida para expansión futura del juego.</li>
-    </ul>
-
-    <p style="text-align:center; margin-top:20px; color:#0f0;">
-      🔥 Rama Oficial Actual: 2.00.1
-    </p>
-
-  </div>
 </div>
 
+<!-- VERSIONES -->
+<div id="Versiones" class="tabcontent">
+<h2>Historia de Versiones</h2>
+<p>Versión 3.5 — Diseño premium completo.</p>
+<p>Versión 2.00.2 — Sistema funcional estable.</p>
+</div>
 
 <!-- LICENCIA -->
 <div id="Licencia" class="tabcontent">
-  <h2>📄 Licencia del juego</h2>
-  <p>ELIGE O PIERDE — Versión 1.10.1</p>
-  <p>© 2026 nruto. Todos los derechos reservados.</p>
-  <p>Este juego se distribuye con fines educativos y de entretenimiento.</p>
-  <p>No se permite redistribuir o vender sin permiso del autor.</p>
+<h2>Licencia</h2>
+<p>© 2026 nruto — Todos los derechos reservados.</p>
 </div>
 
+<footer>
+ELIGE O PIERDE — Versión 3.5<br>
+Diseño premium minimalista
+</footer>
+
 <script>
-function copiar() {
+
+function copiar(){
   const t = document.getElementById("codigo");
   t.select();
   document.execCommand("copy");
-  alert("Código copiado. Pégalo en la IA para empezar.");
+  alert("Código copiado.");
 }
 
-// Función para pestañas
-function abrirTab(evt, tabName) {
+function abrirTab(evt, tabName){
   const tabcontent = document.getElementsByClassName("tabcontent");
-  for (let i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
   const tablinks = document.getElementsByClassName("tablink");
-  for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
 
-<hr>
-<footer style="margin-top:30px; font-size:14px; color:#aaa;">
-  <p>🎮 <strong>ELIGE O PIERDE</strong></p>
-  <p>Creado por <strong>nruto</strong> — Bogotá, 2026<br>Juego conceptual, reglas y diseño: nruto</p>
-  <p>Colaboración IA:<br>ChatGPT (OpenAI) · Grok (xAI) · Claude</p>
-  <p>Este sitio web solo hospeda el código del juego.<br>Las decisiones y partidas ocurren dentro de la IA seleccionada.</p>
-</footer>
+  for(let i=0;i<tabcontent.length;i++){
+    tabcontent[i].classList.remove("active");
+  }
+
+  for(let i=0;i<tablinks.length;i++){
+    tablinks[i].classList.remove("active");
+  }
+
+  document.getElementById(tabName).classList.add("active");
+  evt.currentTarget.classList.add("active");
+}
+
+</script>
 
 </body>
 </html>
