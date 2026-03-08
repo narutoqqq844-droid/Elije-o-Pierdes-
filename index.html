@@ -134,6 +134,7 @@ footer {
   <button class="tablink active" onclick="abrirTab(event, 'Juego')">Juego</button>
   <button class="tablink" onclick="abrirTab(event, 'Versiones')">Versiones</button>
   <button class="tablink" onclick="abrirTab(event, 'Licencia')">Licencia</button>
+  <button class="tablink" onclick="abrirTab(event,'Sugerencias')">Sugerencias</button>
 </div>
 
 <!-- JUEGO -->
@@ -306,6 +307,21 @@ y genera el primer escenario.
   <p>No se permite redistribuir o vender sin permiso del autor.</p>
 </div>
 
+<!-- SUGERENCIAS -->
+<div id="Sugerencias" class="tabcontent">
+  <h2>💡 Sugerencias</h2>
+
+  <p>Si tienes ideas para mejorar el juego <strong>ELIGE O PIERDE</strong>, puedes escribirlas aquí:</p>
+
+  <textarea placeholder="Escribe tu sugerencia aquí..." style="width:100%; height:120px;"></textarea>
+
+  <br><br>
+
+  <button onclick="enviarSugerencia()">Enviar sugerencia</button>
+
+  <p id="mensajeSugerencia" style="margin-top:10px; color:#0f0;"></p>
+</div>
+  
 <script>
 function copiar() {
 
