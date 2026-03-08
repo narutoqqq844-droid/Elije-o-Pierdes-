@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>ELIGE O PIRERDE — Versión 2.00.2</title>
+  <title>ELIGE O PIRERDE — Versión 3.0.0</title>
 <style>
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -295,10 +295,13 @@ y genera el primer escenario.
 
 <script>
 function copiar() {
-  const t = document.getElementById("codigo");
-  t.select();
-  document.execCommand("copy");
-  alert("Código copiado. Pégalo en la IA para empezar.");
+
+  const texto = document.getElementById("codigo").value;
+
+  navigator.clipboard.writeText(texto).then(function() {
+    alert("✅ Código copiado. Pégalo en la IA para empezar.");
+  });
+
 }
 
 // Función para pestañas
