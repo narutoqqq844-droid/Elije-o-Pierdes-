@@ -6,69 +6,66 @@
 <style>
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f5f5f7;
-  color: #1d1d1f;
+  background: var(--bg-main);
+  color: var(--text-main);
   padding: 40px 20px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
+  transition: 0.4s;
+}
+:root {
+  --bg-main: linear-gradient(135deg, #ffffff, #eaeaea);
+  --text-main: #000;
+  --panel: #ffffff;
 }
 
-/* TITULOS */
+.dark-mode {
+  --bg-main: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  --text-main: #f5f5f5;
+  --panel: #151515;
+}
+
 h1 {
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 1px;
   margin-bottom: 10px;
 }
 
-h2 {
-  margin-top: 20px;
-}
-
-/* TEXTO */
 p {
-  color: #555;
+  opacity: 0.75;
 }
-
-/* CAJAS */
-.tablero, .tabcontent {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 25px;
-  border: 1px solid #ddd;
-}
-
-/* TEXTAREA */
+  
 textarea {
   width: 100%;
-  background: #f0f0f0;
-  color: #111;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  background: #111;
+  color: #00ff88;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #222;
   font-size: 14px;
 }
 
-/* BOTONES */
 button {
-  margin-top: 12px;
-  padding: 10px 20px;
-  font-size: 14px;
-  border-radius: 20px;
+  margin-top: 15px;
+  padding: 12px 22px;
+  font-size: 15px;
+  border-radius: 30px;
   border: none;
-  background: #1d1d1f;
-  color: #fff;
+  background: #ffffff;
+  color: #000;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background: #444;
+  background: #e5e5e5;
+  transform: scale(1.05);
 }
 
-/* LINKS */
 a {
-  color: #0071e3;
+  color: #4ea1ff;
   text-decoration: none;
 }
 
@@ -76,40 +73,73 @@ a:hover {
   text-decoration: underline;
 }
 
-/* TABS */
+.tablero {
+  border: none;
+  padding: 25px;
+  margin-bottom: 30px;
+  background: var(--panel);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
 .tabs {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .tabs button {
-  background: #e5e5e5;
-  color: #333;
-  border: 1px solid #ccc;
+  padding: 12px 24px;
+  margin-right: 10px;
+  background: #1c1c1c;
+  color: #aaa;
+  border-radius: 30px;
+  border: 1px solid #333;
+  transition: 0.3s;
 }
 
 .tabs button.active {
-  background: #1d1d1f;
+  background: #ffffff;
+  color: #000;
+  font-weight: 600;
+}
+
+.tabs button:hover {
+  background: #2a2a2a;
   color: #fff;
 }
 
-/* FOOTER */
-footer {
-  margin-top: 40px;
-  font-size: 13px;
-  color: #777;
-  text-align: center;
-}
-
-/* CONTENIDO */
 .tabcontent {
   display: none;
+  padding: 25px;
+  background: var(--panel);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  animation: aparecer 0.4s ease;
+}
+
+/* ANIMACIÓN AÑADIDA */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+  text-align: center;
 }
 </style>
 </head>
 <body>
 
 <h1>🎮 ELIGE O PIERDE — Versión 3.0.0</h1>
-<p>Creado por Nicolas Mendoza – Bogotá, 2026</p>
+<p>Creado por nruto – Bogotá, 2026</p>
 
 <!-- PESTAÑAS -->
 <div class="tabs">
@@ -335,10 +365,12 @@ function abrirTab(evt, tabName) {
 <hr>
 <footer style="margin-top:30px; font-size:14px; color:#aaa;">
   <p>🎮 <strong>ELIGE O PIERDE</strong></p>
-  <p>Creado por <strong>Nicolas Mendoza</strong> — Bogotá, 2026<br>Juego conceptual, reglas y diseño: nruto</p>
+  <p>Creado por <strong>nruto</strong> — Bogotá, 2026<br>Juego conceptual, reglas y diseño: nruto</p>
   <p>Colaboración IA:<br>ChatGPT (OpenAI) · Grok (xAI) · Claude</p>
   <p>Este sitio web solo hospeda el código del juego.<br>Las decisiones y partidas ocurren dentro de la IA seleccionada.</p>
 </footer>
 
 </body>
 </html> 
+
+                                                            
