@@ -334,7 +334,20 @@ y genera el primer escenario.
   </iframe>
 
 </div>
-   
+ <div id="Login" class="tabcontent">
+  <h2>🔐 Iniciar sesión</h2>
+
+  <input id="usuario" placeholder="Usuario" style="padding:10px; margin:5px; border-radius:10px; border:1px solid #ccc;">
+  <input id="password" type="password" placeholder="Contraseña" style="padding:10px; margin:5px; border-radius:10px; border:1px solid #ccc;">
+
+  <br>
+
+  <button onclick="registrar()">Registrarse</button>
+  <button onclick="login()">Entrar</button>
+
+  <p id="estadoLogin" style="margin-top:10px;"></p>
+</div>  
+  
 <script>
 function copiar() {
 
@@ -361,7 +374,38 @@ function abrirTab(evt, tabName) {
 }
   
 </script>
+<script>
+// Guardar usuario
+function registrar() {
+  const user = document.getElementById("usuario").value;
+  const pass = document.getElementById("password").value;
 
+  if (!user || !pass) {
+    document.getElementById("estadoLogin").innerText = "⚠️ Completa todos los campos";
+    return;
+  }
+
+  localStorage.setItem("usuario", user);
+  localStorage.setItem("password", pass);
+
+  document.getElementById("estadoLogin").innerText = "✅ Usuario registrado";
+}
+
+// Iniciar sesión
+function login() {
+  const user = document.getElementById("usuario").value;
+  const pass = document.getElementById("password").value;
+
+  const savedUser = localStorage.getItem("usuario");
+  const savedPass = localStorage.getItem("password");
+
+  if (user === savedUser && pass === savedPass) {
+    document.getElementById("estadoLogin").innerText = "✅ Bienvenido " + user;
+  } else {
+    document.getElementById("estadoLogin").innerText = "❌ Usuario o contraseña incorrectos";
+  }
+}
+</script>
 <hr>
 <footer style="margin-top:30px; font-size:14px; color:#aaa;">
   <p>🎮 <strong>ELIGE O PIERDE</strong></p>
