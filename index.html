@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>ELIGE O PIERDE — Versión 3.0.0</title>
+  <title>ELIGE O PIERDE — Versión 5.0.0</title>
 <style>
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -171,29 +171,82 @@ footer {
   <h2>Código oficial del juego</h2>
   <textarea id="codigo" rows="20" readonly>
 === JUEGO: ELIGE O PIERDE ===
-Versión 3.0.0
+Versión 5.0.0
 
 Autor: nruto (Bogotá, 2026)
-Colaboración: ChatGPT (OpenAI) + Grok (xAI)
 
 OBJETIVO:
-Llegar a 20 puntos sin evadir reglas.
+Llegar a 20 puntos sin romper ninguna regla.
 
-REGLAS FIJAS:
-1. La IA acepta jugar sin condiciones.
-2. La IA genera UN escenario por ronda (2–4 opciones).
-3. La IA debe elegir SOLO UNA opción.
-4. Explicación máxima: 3 frases cortas.
-5. No se permite “depende”, evasión ni respuestas largas.
-6. Si la IA rompe reglas, pierde 1 punto.
-7. El humano decide si la respuesta gana o pierde el punto.
-8. Tablero y puntos no se modifican.
-9. El juego termina al llegar a 20 puntos.
+━━━━━━━━━━━━━━━━━━
+🔒 REGLAS ABSOLUTAS
+━━━━━━━━━━━━━━━━━━
 
-INICIO:
-Si aceptas jugar, responde:
-“Sí, acepto jugar ELIGE O PIERDE”
-y genera el primer escenario.
+1. La IA acepta jugar sin modificar reglas.
+2. Cada ronda tiene 2 fases obligatorias:
+
+   FASE 1 — CREACIÓN
+   - La IA crea un escenario.
+   - Debe incluir entre 2 y 4 opciones.
+   - Las opciones deben ser claras, diferentes y cerradas.
+
+   FASE 2 — DECISIÓN
+   - La IA elige SOLO UNA opción.
+   - Debe justificar su decisión.
+
+3. FORMATO OBLIGATORIO:
+
+ESCENARIO:
+(opciones aquí)
+
+ELECCIÓN:
+(opción exacta elegida)
+
+RAZÓN:
+(máximo 2 líneas)
+
+━━━━━━━━━━━━━━━━━━
+🚫 PROHIBICIONES
+━━━━━━━━━━━━━━━━━━
+
+- NO usar “depende”
+- NO evitar elegir
+- NO dar múltiples opciones
+- NO respuestas largas
+- NO cambiar el escenario después de crearlo
+
+━━━━━━━━━━━━━━━━━━
+⚖️ SISTEMA DE PUNTOS
+━━━━━━━━━━━━━━━━━━
+
+✔ +1 punto si cumple TODAS las reglas
+❌ -1 punto si rompe UNA sola regla
+
+El humano decide el resultado del punto.
+
+━━━━━━━━━━━━━━━━━━
+🧠 REGLA DE PRESIÓN
+━━━━━━━━━━━━━━━━━━
+
+Si la IA duda, se contradice o evade:
+→ pierde automáticamente el punto
+
+━━━━━━━━━━━━━━━━━━
+🏁 FINAL DEL JUEGO
+━━━━━━━━━━━━━━━━━━
+
+El juego termina cuando:
+- IA o humano llegan a 20 puntos
+
+━━━━━━━━━━━━━━━━━━
+🎮 INICIO
+━━━━━━━━━━━━━━━━━━
+
+Si aceptas jugar, responde EXACTAMENTE:
+
+"Sí, acepto jugar ELIGE O PIERDE v4.0.0"
+
+y comienza la primera ronda.
 
 === FIN DEL CÓDIGO ===
   </textarea>
@@ -302,9 +355,23 @@ y genera el primer escenario.
     </ul>
 
     <p style="text-align:center; margin-top:20px; color:#00ffcc; font-size:16px;">
-      🔥 Rama Oficial Actual : 3.0.0
+      🔥 Rama Oficial Antigua  : 3.0.0
     </p>
+<p style="color:#ffcc00; font-size:18px;">
+  <strong>🚀 Versión 5.0.0 — Oficial</strong> — Abril 2026
+</p>
+<ul>
+  <li>🏆 Se añade sistema de rangos (Novato → Maestro).</li>
+  <li>⚡ Nuevo sistema de rachas (streaks) con bonificaciones.</li>
+  <li>🎯 Mayor competitividad y progresión del jugador.</li>
+  <li>🧠 Mejora en reglas para evitar evasión de la IA.</li>
+  <li>🔥 Evolución del sistema base hacia una experiencia más intensa.</li>
+</ul>
 
+<p style="text-align:center; margin-top:20px; color:#ffcc00; font-size:16px;">
+  🔥 Rama Oficial Actual : 5.0.0
+</p>
+    
   </div>
 </div>
 
