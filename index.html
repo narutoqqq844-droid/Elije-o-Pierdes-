@@ -160,7 +160,6 @@ footer {
   <button class="tablink" onclick="abrirTab(event, 'Versiones')">Versiones</button>
   <button class="tablink" onclick="abrirTab(event, 'Licencia')">Licencia</button>
   <button class="tablink" onclick="abrirTab(event,'Sugerencias')">Sugerencias</button>
-  <button class="tablink" onclick="abrirTab(event,'Chat')">💬 Chat</button>
 </div>
 
 <!-- JUEGO -->
@@ -453,59 +452,9 @@ function abrirTab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
-<div id="Chat" class="tabcontent">
-  <h2>💬 Chat ELIGE O PIERDE</h2>
-
-  <div id="chatbox"
-       style="height:300px;
-              overflow:auto;
-              border:1px solid #00ffcc;
-              padding:10px;
-              border-radius:10px;
-              margin-bottom:10px;">
-  </div>
-
-  <input
-    type="text"
-    id="mensaje"
-    placeholder="Escribe aquí..."
-    style="width:80%;
-           padding:10px;
-           border-radius:10px;">
-
-  <button onclick="enviarMensaje()">Enviar</button>
-</div>
   
 </script>
 
- function enviarMensaje() {
-
-  let texto = document.getElementById("mensaje").value;
-  let chat = document.getElementById("chatbox");
-
-  if(texto.trim() === "") return;
-
-  chat.innerHTML += "<p><b>Tú:</b> " + texto + "</p>";
-
-  let respuesta = "No entendí el mensaje.";
-
-  if(texto.toLowerCase().includes("hola")){
-      respuesta = "¡Hola! Bienvenido a ELIGE O PIERDE.";
-  }
-  else if(texto.toLowerCase().includes("jugar")){
-      respuesta = "Puedes copiar el código del juego y usarlo en una IA.";
-  }
-  else if(texto.toLowerCase().includes("reglas")){
-      respuesta = "Las reglas están en la pestaña Juego.";
-  }
-
-  chat.innerHTML += "<p><b>Bot:</b> " + respuesta + "</p>";
-
-  document.getElementById("mensaje").value = "";
-  chat.scrollTop = chat.scrollHeight;
-}
-  
 <hr>
 <footer style="margin-top:30px; font-size:14px; color:#aaa;">
   <p>🎮 <strong>ELIGE O PIERDE</strong></p>
@@ -522,6 +471,3 @@ function abrirTab(evt, tabName) {
 
 </body>
 </html> 
-
-
-                                                          
