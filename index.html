@@ -146,6 +146,7 @@ footer {
   text-align: center;
 }
 </style>
+</style>
 </head>
 
 <body class="dark-mode">
@@ -159,7 +160,6 @@ footer {
   <button class="tablink" onclick="abrirTab(event, 'Versiones')">Versiones</button>
   <button class="tablink" onclick="abrirTab(event, 'Licencia')">Licencia</button>
   <button class="tablink" onclick="abrirTab(event,'Sugerencias')">Sugerencias</button>
-  <button class="tablink" onclick="abrirTab(event,'Chat')">Chat</button>
 </div>
 
 <!-- JUEGO -->
@@ -274,51 +274,18 @@ y comienza la primera ronda.
     }).render("#paypal-container-33EAANJKMPW82");
   </script>
 
-<!-- ENTRAR A IAs -->
-<h2>Entrar a una IA</h2>
-
-<ul>
+  <!-- ENTRAR A IAs -->
+  <h2>Entrar a una IA</h2>
+  <ul>
     <li><a href="https://www.popai.pro/" target="_blank">PopAI</a></li>
-    <li><a href="https://chat.openai.com/" target="_blank">ChatGPT</a></li>
-    <li><a href="https://grok.x.ai/" target="_blank">Grok</a></li>
+    <li><a href="https://chat.openai.com/" target="_blank">ChatGPT (OpenAI)</a></li>
+    <li><a href="https://grok.x.ai/" target="_blank">Grok (xAI)</a></li>
     <li><a href="https://claude.ai/" target="_blank">Claude</a></li>
-    <li><a href="https://gemini.google.com/" target="_blank">Gemini</a></li>
+    <li><a href="https://gemini.google.com/" target="_blank">Gemini (Google)</a></li>
     <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity</a></li>
-    <li><a href="https://copilot.microsoft.com/" target="_blank">Copilot</a></li>
-</ul>
-
-<!-- MÁS IAs -->
-<h3>Más herramientas de IA</h3>
-
-<details>
-    <summary><strong>Ver lista de IAs</strong></summary>
-
-    <ul style="font-size: 12px; line-height: 1.4;">
-        <li>DeepSeek</li>
-        <li>Claude</li>
-        <li>Gemini</li>
-        <li>Grok</li>
-        <li>Perplexity</li>
-        <li>Copilot</li>
-        <li>PopAI</li>
-        <li>Poe</li>
-        <li>Pi AI</li>
-        <li>You.com</li>
-
-        <br>
-
-        <li>Midjourney</li>
-        <li>Leonardo AI</li>
-        <li>Runway</li>
-        <li>Pika</li>
-        <li>Suno</li>
-        <li>Udio</li>
-        <li>ElevenLabs</li>
-        <li>Notion AI</li>
-        <li>ChatPDF</li>
-        <li>NotebookLM</li>
-    </ul>
-</details>
+    <li><a href="https://copilot.microsoft.com/" target="_blank">Copilot (Microsoft)</a></li>
+  </ul>
+</div>
   
 <!-- VERSIONES --> 
 <div id="Versiones" class="tabcontent">
@@ -471,23 +438,6 @@ function copiar() {
   });
 
 }
-
-  <div id="Chat" class="tabcontent">
-  <h2>💬 Chat ELIGE O PIERDE</h2>
-
-  <div id="chatbox"
-       style="height:300px;overflow:auto;border:1px solid #00ffcc;padding:10px;border-radius:10px;margin-bottom:10px;">
-  </div>
-
-  <input
-    type="text"
-    id="mensaje"
-    placeholder="Escribe aquí..."
-    style="width:80%;padding:10px;border-radius:10px;">
-
-  <button onclick="enviarMensaje()">Enviar</button>
-</div>
-  
 
 // Función para pestañas
 function abrirTab(evt, tabName) {
