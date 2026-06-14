@@ -146,7 +146,6 @@ footer {
   text-align: center;
 }
 </style>
-</style>
 </head>
 
 <body class="dark-mode">
@@ -160,6 +159,7 @@ footer {
   <button class="tablink" onclick="abrirTab(event, 'Versiones')">Versiones</button>
   <button class="tablink" onclick="abrirTab(event, 'Licencia')">Licencia</button>
   <button class="tablink" onclick="abrirTab(event,'Sugerencias')">Sugerencias</button>
+  <button class="tablink" onclick="abrirTab(event,'Chat')">Chat</button>
 </div>
 
 <!-- JUEGO -->
@@ -471,6 +471,23 @@ function copiar() {
   });
 
 }
+
+  <div id="Chat" class="tabcontent">
+  <h2>💬 Chat ELIGE O PIERDE</h2>
+
+  <div id="chatbox"
+       style="height:300px;overflow:auto;border:1px solid #00ffcc;padding:10px;border-radius:10px;margin-bottom:10px;">
+  </div>
+
+  <input
+    type="text"
+    id="mensaje"
+    placeholder="Escribe aquí..."
+    style="width:80%;padding:10px;border-radius:10px;">
+
+  <button onclick="enviarMensaje()">Enviar</button>
+</div>
+  
 
 // Función para pestañas
 function abrirTab(evt, tabName) {
